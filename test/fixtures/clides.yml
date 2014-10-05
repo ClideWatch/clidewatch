@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  url: MyString
+  memory_lo: 1
+  memory_hi: 1
+  space_lo: 1
+  space_hi: 1
+  private: false
+  colaboration: false
+  community: false
+  sudo: false
+  ssh: false
+  ssl: false
+  hosted: false
+  floss: MyString
+  source: MyString
+
+two:
+  name: MyString
+  url: MyString
+  memory_lo: 1
+  memory_hi: 1
+  space_lo: 1
+  space_hi: 1
+  private: false
+  colaboration: false
+  community: false
+  sudo: false
+  ssh: false
+  ssl: false
+  hosted: false
+  floss: MyString
+  source: MyString

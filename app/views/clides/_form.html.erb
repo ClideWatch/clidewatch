@@ -1,0 +1,77 @@
+<%= form_for(@clide) do |f| %>
+  <% if @clide.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clide.errors.count, "error") %> prohibited this clide from being saved:</h2>
+
+      <ul>
+      <% @clide.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :memory_lo %><br />
+    <%= f.number_field :memory_lo %>
+  </div>
+  <div class="field">
+    <%= f.label :memory_hi %><br />
+    <%= f.number_field :memory_hi %>
+  </div>
+  <div class="field">
+    <%= f.label :space_lo %><br />
+    <%= f.number_field :space_lo %>
+  </div>
+  <div class="field">
+    <%= f.label :space_hi %><br />
+    <%= f.number_field :space_hi %>
+  </div>
+  <div class="field">
+    <%= f.label :private %><br />
+    <%= f.check_box :private %>
+  </div>
+  <div class="field">
+    <%= f.label :colaboration %><br />
+    <%= f.check_box :colaboration %>
+  </div>
+  <div class="field">
+    <%= f.label :community %><br />
+    <%= f.check_box :community %>
+  </div>
+  <div class="field">
+    <%= f.label :sudo %><br />
+    <%= f.check_box :sudo %>
+  </div>
+  <div class="field">
+    <%= f.label :ssh %><br />
+    <%= f.check_box :ssh %>
+  </div>
+  <div class="field">
+    <%= f.label :ssl %><br />
+    <%= f.check_box :ssl %>
+  </div>
+  <div class="field">
+    <%= f.label :hosted %><br />
+    <%= f.check_box :hosted %>
+  </div>
+  <div class="field">
+    <%= f.label :floss %><br />
+    <%= f.text_field :floss %>
+  </div>
+  <div class="field">
+    <%= f.label :source %><br />
+    <%= f.text_field :source %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

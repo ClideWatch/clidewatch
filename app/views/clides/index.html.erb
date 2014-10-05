@@ -1,0 +1,51 @@
+<h1>Listing clides</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Url</th>
+    <th>Memory lo</th>
+    <th>Memory hi</th>
+    <th>Space lo</th>
+    <th>Space hi</th>
+    <th>Private</th>
+    <th>Colaboration</th>
+    <th>Community</th>
+    <th>Sudo</th>
+    <th>Ssh</th>
+    <th>Ssl</th>
+    <th>Hosted</th>
+    <th>Floss</th>
+    <th>Source</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @clides.each do |clide| %>
+  <tr>
+    <td><%= clide.name %></td>
+    <td><%= clide.url %></td>
+    <td><%= clide.memory_lo %></td>
+    <td><%= clide.memory_hi %></td>
+    <td><%= clide.space_lo %></td>
+    <td><%= clide.space_hi %></td>
+    <td><%= clide.private %></td>
+    <td><%= clide.colaboration %></td>
+    <td><%= clide.community %></td>
+    <td><%= clide.sudo %></td>
+    <td><%= clide.ssh %></td>
+    <td><%= clide.ssl %></td>
+    <td><%= clide.hosted %></td>
+    <td><%= clide.floss %></td>
+    <td><%= clide.source %></td>
+    <td><%= link_to 'Show', clide %></td>
+    <td><%= link_to 'Edit', edit_clide_path(clide) %></td>
+    <td><%= link_to 'Destroy', clide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Clide', new_clide_path %>
