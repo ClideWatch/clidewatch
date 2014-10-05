@@ -1,13 +1,13 @@
-<h1>Listing clides</h1>
+<div id="clidesWelcomeDiv">
+<h2>Welcome n stuff</h2>
+Here you will find stuff .. bla blah .. and so on ... more coming soon :)
+</div>
 
-<table>
+<table id="clidesTable">
   <tr>
     <th>Name</th>
-    <th>Url</th>
-    <th>Memory lo</th>
-    <th>Memory hi</th>
-    <th>Space lo</th>
-    <th>Space hi</th>
+    <th>Memory</th>
+    <th>Disk</th>
     <th>Private</th>
     <th>Colaboration</th>
     <th>Community</th>
@@ -15,37 +15,42 @@
     <th>Ssh</th>
     <th>Ssl</th>
     <th>Hosted</th>
-    <th>Floss</th>
     <th>Source</th>
-    <th></th>
-    <th></th>
-    <th></th>
+<% if @is_admin %>
+    <th></th><th></th><th></th>
+<% end %>
   </tr>
 
-<% @clides.each do |clide| %>
+<%
+  def yes_or_no a_bool ; (a_bool)? "yes" : "no" ; end ;
+  def parse_range an_int , another_int
+    (an_int == -1)          ? "∞"         :
+    (an_int == another_int) ? "#{an_int}" : "#{an_int}-#{another_int}"
+  end
+
+  @clides.each do |clide|
+%>
   <tr>
-    <td><%= clide.name %></td>
-    <td><%= clide.url %></td>
-    <td><%= clide.memory_lo %></td>
-    <td><%= clide.memory_hi %></td>
-    <td><%= clide.space_lo %></td>
-    <td><%= clide.space_hi %></td>
-    <td><%= clide.private %></td>
-    <td><%= clide.colaboration %></td>
-    <td><%= clide.community %></td>
-    <td><%= clide.sudo %></td>
-    <td><%= clide.ssh %></td>
-    <td><%= clide.ssl %></td>
-    <td><%= clide.hosted %></td>
-    <td><%= clide.floss %></td>
-    <td><%= clide.source %></td>
+    <td><%= link_to     clide.name ,      clide.url       %></td>
+    <td><%= parse_range clide.memory_lo , clide.memory_hi %></td>
+    <td><%= parse_range clide.space_lo ,  clide.space_hi  %></td>
+    <td><%= yes_or_no   clide.private                     %></td>
+    <td><%= yes_or_no   clide.colaboration                %></td>
+    <td><%= yes_or_no   clide.community                   %></td>
+    <td><%= yes_or_no   clide.sudo                        %></td>
+    <td><%= yes_or_no   clide.ssh                         %></td>
+    <td><%= yes_or_no   clide.ssl                         %></td>
+    <td><%= yes_or_no   clide.hosted                      %></td>
+    <td><%= link_to     clide.floss ,     clide.source    %></td>
+  <% if @is_admin %>
     <td><%= link_to 'Show', clide %></td>
     <td><%= link_to 'Edit', edit_clide_path(clide) %></td>
     <td><%= link_to 'Destroy', clide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Clide', new_clide_path %>
+<%= link_to 'New Clide', new_clide_path if @is_admin %>

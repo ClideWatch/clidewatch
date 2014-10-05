@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
  */
+
+
+html              { background-color: #000 ; color: #fff ; }
+
+#headerTable      { width: 750px ; text-align: center; }
+#asciiBannerPre   { font-size: 6pt ; background-color: #000 ; color: #fff ; }
+#siteDescSpan     { font-size: 24pt ; font-family:Monospace ; }
+#promptLoginB     { color: #8f8 ; }
+#promptPathSpan   { color: #88f ; }

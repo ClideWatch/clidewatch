@@ -8,7 +8,27 @@
 </head>
 <body>
 
+
+<div id="headerDiv">
+  <table id="headerTable">
+    <tr>
+      <td colspan="2"><pre id="asciiBannerPre"><%= ASCII_ART_BANNERS[0] %></pre>
+      </td>
+    </tr>
+    <tr>
+      <td><pre id="asciiBannerPre">          </pre></td>
+      <td><span id="siteDescSpan">
+            <%=raw '<b    id="promptLoginB">clide@guide</b>'         +
+                   '<span id="promptPathSpan" >:~/cloud/ide/</span>' +
+                   '$ watch<span id="promptCursorSpan">_</span>'     %></span>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
 <%= yield %>
+
 
 </body>
 </html>
