@@ -1,6 +1,34 @@
 <div id="clidesWelcomeDiv">
-<h2>Welcome n stuff</h2>
-Here you will find stuff .. bla blah .. and so on ... more coming soon :)
+  <p>
+    <h3>Welcome n stuff</h3>
+    If youre interested in trying out one of these fancy new-fangled invisible boxes in the sky and you've heard that they keep in a cloud somewhere but you're not sure where - then this is the place to start
+    Here at clIDE-guide we love all this nifty stuff and we scope it all out like kids in a candy store; so we're able to give you the low-down on what's up.
+  </p><p>
+    <h3>What is a clIDE - and why would i need a guide ?</h3>
+    The word clIDE is a contraction of cloud-hosted-integrated-development-environment; which descibes a class of gadgets, of which serveral instances have sprung up over the past couple of years. You probably wouldn't want to have to say that too many times; so we coined this term for you. You're welcome!
+  </p><p>
+    Generally speaking, a clIDE is a website that offers access to a virtual computer, that software developers can use to build and test their programs using their web-browser. They are generally best suited for web development; but some are fully functional computers systems that can run nearly any code. Some of them even allow multiple people to type code into the same file at the same time and see the others changes as they type in real time. Add in a chat and voice channel and these make for an excellent platform for collaboration between project team members, as well as students and teachers.
+  </p><p>
+    There are several of these out there now to choose from and more popping up all the time; so this site was created to attemp to keep track of them all and to make impartial comparisons and reviews in a central location to help newcomers decide which is the best fit for their needs. We use our favorites of these tools regularly and have tested the ones you'll find reviewed here thoroughly (well, a little thoroughly - seems there's always a new one to try).
+  </p><p>
+    <h3>How does clIDE-guide rate/compare clIDEs ?</h3>
+    All of the the hosted services listed here offer a free tier and that is the basis of comparisson.
+    These are the criteria we are currenty tracking:
+  </p>
+
+  <ul>
+    <li>Memory - This is the total VM memory shared by all kernel and user processes.</li>
+    <li>Disk - This is the actual available empty disk space you get on a fresh VM and not the amount alloted to the entire VM (much of which is occupied by the OS). </li>
+    <li>Private - Some of the hosted services allow all users to keep all of of their data private while others are free only for open source projects and reserve this feature for paid subscriptions only.</li>
+    <li>Colaboration - Regardless of the privacy status most service allow some number of collaborators on your projects. In all cases though, even if the project is publicly readable; you are the one to decide who may edit your files. Some of them even have a real-time shared editing feature, whereby multiple people can edit the same code simultaneously and see each other's typing as they type (very nifty). This latter group are the ones marked with a 'yes' for this criteria. </li>
+    <li>Community - Some of the hosted services have integrated community/chat interaction.</li>
+    <li>Sudo - Some of the hosted services offer fully priveleged VM logins.</li>
+    <li>Ssh - Some of the hosted services allow you to access the VM using an ssh client.</li>
+    <li>Ssl - Some of the hosted services feature an https url into your webservers.</li>
+    <li>Hosted - Some of these web-based IDE's are available 'in the cloud' only and some others require you to host on your own server; and there are yet others that offer both options.</li>
+    <li>Source - Some of these web-based IDE's are free and open-source; allowing you to run your own cloud IDE service if you desire.</li>
+  </ul>
+
 </div>
 
 <table id="clidesTable">
@@ -41,7 +69,11 @@ Here you will find stuff .. bla blah .. and so on ... more coming soon :)
     <td><%= yes_or_no   clide.ssh                         %></td>
     <td><%= yes_or_no   clide.ssl                         %></td>
     <td><%= yes_or_no   clide.hosted                      %></td>
+  <% unless clide.source.blank? %>
     <td><%= link_to     clide.floss ,     clide.source    %></td>
+  <% else %>
+    <td><%= clide.source                                  %></td>
+  <% end %>
   <% if @is_admin %>
     <td><%= link_to 'Show', clide %></td>
     <td><%= link_to 'Edit', edit_clide_path(clide) %></td>
