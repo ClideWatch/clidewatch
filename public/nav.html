@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="assets/application.css"/>
+
+  <script type="text/javascript">
+  function loadIframe(url) { parent.contentFrame.location = url ; }
+  </script>
+
+</head>
+<body>
+
+<div id="navDiv">
+
+  <table id="navTable">
+    <tr><td class="navTd" onClick=" loadIframe('clides')"  >Stats</td></tr>
+    <tr><td class="navTd" onClick="loadIframe('ratings.html')">Ratingss</td></tr>
+    <tr><td class="navTd" onClick="loadIframe('reviews.html')">Reviewss</td></tr>
+    <tr><td class="navTd" onClick="loadIframe('faqs.html')"   >FAQs</td></tr>
+    <tr><td><a target="contentFrame" href="clides"  >Stats</a>   </td></tr>
+    <tr><td><a target="contentFrame" href="ratings.html">Ratingss</a></td></tr>
+    <tr><td><a target="contentFrame" href="reviews.html">Reviewss</a></td></tr>
+    <tr><td><a target="contentFrame" href="faqs.html"   >FAQs</a>    </td></tr>
+  </table>
+
+</div>
+
+</body>
+</html>
+

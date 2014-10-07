@@ -13,10 +13,23 @@
  */
 
 
-html              { background-color: #000 ; color: #fff ; }
+html { background-color: #000 ; color: #fff ; }
 
+#headerDiv , #contentDiv { position: absolute ; }
+
+#headerDiv        { left: 0px ; top: 0px ; right: 0px ; height: 180px ; }
 #headerTable      { width: 750px ; text-align: center; }
 #asciiBannerPre   { font-size: 6pt ; background-color: #000 ; color: #fff ; }
 #siteDescSpan     { font-size: 24pt ; font-family:Monospace ; }
 #promptLoginB     { color: #8f8 ; }
 #promptPathSpan   { color: #88f ; }
+
+#contentTable        { width: 100% ; height: 100% ; border-collapse: collapse ; }
+#contentDiv          { left: 0px ; top: 180px ; right: 0px ; bottom: 0px ; }
+#contentTable iframe { width: 100% ; height: 100% ; border: 0px ; }
+#navTd               { border-right: 1px solid #fff ; width: 20% ; }
+#contentTd           { border-left:  1px solid #fff ; width: 80% ; }
+
+.navTd { cursor: pointer ; border: 1px solid #080 ; border-radius: 8px ; }
+
+#iluvFlossA { float: right ; }
