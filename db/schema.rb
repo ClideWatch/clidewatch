@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141005035309) do
+ActiveRecord::Schema.define(:version => 20141007164327) do
 
   create_table "clides", :force => true do |t|
     t.string   "name"
@@ -31,6 +31,24 @@ ActiveRecord::Schema.define(:version => 20141005035309) do
     t.string   "source"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "ratings", :force => true do |t|
+    t.string   "ip"
+    t.integer  "web"
+    t.integer  "native"
+    t.integer  "stability"
+    t.integer  "performance"
+    t.integer  "lag"
+    t.integer  "features"
+    t.integer  "debugging"
+    t.integer  "community"
+    t.integer  "support"
+    t.integer  "pricing"
+    t.integer  "overall"
+    t.integer  "clide_id",    :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

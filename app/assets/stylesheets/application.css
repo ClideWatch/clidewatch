@@ -33,3 +33,5 @@ html { background-color: #000 ; color: #fff ; }
 .navTd { cursor: pointer ; border: 1px solid #080 ; border-radius: 8px ; }
 
 #iluvFlossA { float: right ; }
+
+#presentationDiv table { text-align: right ; }

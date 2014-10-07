@@ -1,0 +1,121 @@
+
+<%= form_for(@rating) do |f| %>
+  <% if @rating.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rating.errors.count, "error") %> prohibited your votes from being saved:</h2>
+
+      <ul>
+      <% @rating.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h3>Rate a clIDE you've tried
+    <%= select_tag "rating[clide_id]" , options_from_collection_for_select(@clides , "id" , "name") ,
+                  :prompt   => "Select a clIDE" ,
+                  :onchange => "var submitBtn      = document.getElementById('ratingSubmitInput') ;" +
+                                "submitBtn.disabled = !this.value ;" %>
+  </h3>
+  You can vote for as many or as few categories as you like.
+
+  <table id="ratingsTable">
+    <tr><th>Criteria</th><th>poor</th><th>&lt;-</th><th>ok</th><th>-&gt;</th><th>superb</th></tr>
+
+    <tr>
+      <td>Web Development (rails,php,node,etc)</td>
+      <td><%= f.radio_button :web , 1 , :checked => false %></td>
+      <td><%= f.radio_button :web , 2 , :checked => false %></td>
+      <td><%= f.radio_button :web , 3 , :checked => false %></td>
+      <td><%= f.radio_button :web , 4 , :checked => false %></td>
+      <td><%= f.radio_button :web , 5 , :checked => false %></td>
+    </tr>
+    <tr>
+      <td>Native Development (C,java,etc)</td>
+      <td><%= f.radio_button :native , 1 , :checked => false %></td>
+      <td><%= f.radio_button :native , 2 , :checked => false %></td>
+      <td><%= f.radio_button :native , 3 , :checked => false %></td>
+      <td><%= f.radio_button :native , 4 , :checked => false %></td>
+      <td><%= f.radio_button :native , 5 , :checked => false %></td>
+    </tr>
+    <tr>
+      <td>Stability / Uptime</td>
+      <td><%= f.radio_button :stability , 1 , :checked => false %></td>
+      <td><%= f.radio_button :stability , 2 , :checked => false %></td>
+      <td><%= f.radio_button :stability , 3 , :checked => false %></td>
+      <td><%= f.radio_button :stability , 4 , :checked => false %></td>
+      <td><%= f.radio_button :stability , 5 , :checked => false %></td>
+    </tr>
+    <tr>
+      <td>Performance</td>
+      <td><%= f.radio_button :performance , 1 , :checked => false %></td>
+      <td><%= f.radio_button :performance , 2 , :checked => false %></td>
+      <td><%= f.radio_button :performance , 3 , :checked => false %></td>
+      <td><%= f.radio_button :performance , 4 , :checked => false %></td>
+      <td><%= f.radio_button :performance , 5 , :checked => false %></td>
+    </tr>
+    <tr>
+      <td>Responsiveness / Lag</td>
+      <td><%= f.radio_button :lag , 1 , :checked => false %></td>
+      <td><%= f.radio_button :lag , 2 , :checked => false %></td>
+      <td><%= f.radio_button :lag , 3 , :checked => false %></td>
+      <td><%= f.radio_button :lag , 4 , :checked => false %></td>
+      <td><%= f.radio_button :lag , 5 , :checked => false %></td>
+    </tr>
+    <tr>
+      <td>Available Features</td>
+      <td><%= f.radio_button :features , 1 , :checked => false %></td>
+      <td><%= f.radio_button :features , 2 , :checked => false %></td>
+      <td><%= f.radio_button :features , 3 , :checked => false %></td>
+      <td><%= f.radio_button :features , 4 , :checked => false %></td>
+      <td><%= f.radio_button :features , 5 , :checked => false %></td>
+    </tr>
+    <tr>
+      <td>Debugging Tools</td>
+      <td><%= f.radio_button :debugging , 1 , :checked => false %></td>
+      <td><%= f.radio_button :debugging , 2 , :checked => false %></td>
+      <td><%= f.radio_button :debugging , 3 , :checked => false %></td>
+      <td><%= f.radio_button :debugging , 4 , :checked => false %></td>
+      <td><%= f.radio_button :debugging , 5 , :checked => false %></td>
+    </tr>
+    <tr>
+      <td>Community Interaction</td>
+      <td><%= f.radio_button :community , 1 , :checked => false %></td>
+      <td><%= f.radio_button :community , 2 , :checked => false %></td>
+      <td><%= f.radio_button :community , 3 , :checked => false %></td>
+      <td><%= f.radio_button :community , 4 , :checked => false %></td>
+      <td><%= f.radio_button :community , 5 , :checked => false %></td>
+    </tr>
+    <tr>
+      <td>Technical Support</td>
+      <td><%= f.radio_button :support , 1 , :checked => false %></td>
+      <td><%= f.radio_button :support , 2 , :checked => false %></td>
+      <td><%= f.radio_button :support , 3 , :checked => false %></td>
+      <td><%= f.radio_button :support , 4 , :checked => false %></td>
+      <td><%= f.radio_button :support , 5 , :checked => false %></td>
+    </tr>
+    <tr>
+      <td>Value / Pricing</td>
+      <td><%= f.radio_button :pricing , 1 , :checked => false %></td>
+      <td><%= f.radio_button :pricing , 2 , :checked => false %></td>
+      <td><%= f.radio_button :pricing , 3 , :checked => false %></td>
+      <td><%= f.radio_button :pricing , 4 , :checked => false %></td>
+      <td><%= f.radio_button :pricing , 5 , :checked => false %></td>
+    </tr>
+    <tr>
+      <td>Overall Rating</td>
+      <td><%= f.radio_button :overall , 1 , :checked => false %></td>
+      <td><%= f.radio_button :overall , 2 , :checked => false %></td>
+      <td><%= f.radio_button :overall , 3 , :checked => false %></td>
+      <td><%= f.radio_button :overall , 4 , :checked => false %></td>
+      <td><%= f.radio_button :overall , 5 , :checked => false %></td>
+    </tr>
+  </table>
+
+  <div class="actions">
+    <%= button_to  "Cancel" , ratings_path , :method => "get" %>
+    <%= submit_tag "Vote"   , :id => 'ratingSubmitInput' , :disabled => true %>
+  </div>
+
+<% end %>

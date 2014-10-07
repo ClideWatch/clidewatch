@@ -1,0 +1,39 @@
+<h1>Listing ratings</h1>
+
+Cast your vote -->
+<%= button_to  "Vote" , new_rating_path , :method => "get" %>
+
+<table id="ratingsTable">
+  <tr>
+    <th>clIDE</th>
+    <th>Web</th>
+    <th>Native</th>
+    <th>Stability</th>
+    <th>Performance</th>
+    <th>Lag</th>
+    <th>Features</th>
+    <th>Debugging</th>
+    <th>Community</th>
+    <th>Support</th>
+    <th>Pricing</th>
+    <th>Overall</th>
+  </tr>
+
+<% @ratings.each do | a_rating | %>
+  <tr>
+    <td><%= sprintf "%s"  , a_rating[:name]        %></td>
+    <td><%= sprintf "%.1f" , a_rating[:web]         %></td>
+    <td><%= sprintf "%.1f" , a_rating[:native]      %></td>
+    <td><%= sprintf "%.1f" , a_rating[:stability]   %></td>
+    <td><%= sprintf "%.1f" , a_rating[:performance] %></td>
+    <td><%= sprintf "%.1f" , a_rating[:lag]         %></td>
+    <td><%= sprintf "%.1f" , a_rating[:features]    %></td>
+    <td><%= sprintf "%.1f" , a_rating[:debugging]   %></td>
+    <td><%= sprintf "%.1f" , a_rating[:community]   %></td>
+    <td><%= sprintf "%.1f" , a_rating[:support]     %></td>
+    <td><%= sprintf "%.1f" , a_rating[:pricing]     %></td>
+    <td><%= sprintf "%.1f" , a_rating[:overall]     %></td>
+  </tr>
+<% end%>
+
+</table>

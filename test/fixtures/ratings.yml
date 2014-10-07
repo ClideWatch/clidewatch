@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ip: MyString
+  web: 1
+  native: 1
+  stability: 1
+  performance: 1
+  lag: 1
+  features: 1
+  debugging: 1
+  community: 1
+  support: 1
+  pricing: 1
+  overall: 1
+
+two:
+  ip: MyString
+  web: 1
+  native: 1
+  stability: 1
+  performance: 1
+  lag: 1
+  features: 1
+  debugging: 1
+  community: 1
+  support: 1
+  pricing: 1
+  overall: 1
