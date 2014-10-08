@@ -1,3 +1,39 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import '_constants' ;
+
+/* layout */
+#headerDiv , #contentDiv { position: fixed ; padding: 8px ; }
+
+/* layout - header */
+#headerDiv   { left: 0px ; top: 0px ; right: 0px ; height: $HEADER_INIT_H ; }
+#headerTable { width: 100% ; height: 100% ; }
+#bannerTd    { width: $BANNER_W ; margin: 0px ; }
+
+/* layout - main content */
+#contentDiv   { left: 0px ; top: $HEADER_INIT_H ; right: 0px ; bottom: 0px ; }
+#contentTable { width: 100% ; height: 100% ; }
+#navTable     { width: 100% ; }
+#navTd        { width: $NAV_W ; }
+#contentTd    { width: (100% - $NAV_W) ; }
+#contentFrame { width: 100% ; height: 100% ; border: 0px ; }
+
+/* borders */
+#contentTable , #contentTable td { border: 1px solid $BORDER_COLOR ; border-radius: 8px ; }
+#navTable td                     { border: 1px solid $BORDER_COLOR ; border-radius: 8px ; }
+
+/* misc - header */
+#bannerTd       { text-align: center ; }
+#asciiBannerPre { font-size: 6pt ; background-color: #000 ; color: #fff ; }
+#siteDescSpan   { font-size: 24pt ; font-family:Monospace ; }
+#promptLoginB   { color: #8f8 ; }
+#promptPathSpan { color: #88f ; }
+#headerRTd      { text-align: right ; }
+
+/* misc - main content */
+#navTable td     { cursor: pointer ; }
+#contentTable tr { vertical-align: top ; }
+#iluvFlossA      { float: right ; }

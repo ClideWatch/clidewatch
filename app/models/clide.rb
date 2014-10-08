@@ -5,4 +5,5 @@ class Clide < ActiveRecord::Base
                   :memory_hi    , :memory_lo , :name     , :private ,
                   :source       , :space_hi  , :space_lo , :ssh     ,
                   :ssl          , :sudo      , :url
+  validates_presence_of :name
 end

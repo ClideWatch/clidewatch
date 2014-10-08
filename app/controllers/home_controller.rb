@@ -1,7 +1,5 @@
 class HomeController < ApplicationController
 
-  def index
-    render :template => "layouts/home"
-  end
+  def index ; respond_to do | format | ; format.html ; end ; end
 
 end

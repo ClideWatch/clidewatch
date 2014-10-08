@@ -2,40 +2,18 @@
 <html>
 <head>
   <title>ClIDEwatch</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application" , :media => "all" %>
+  <%= stylesheet_link_tag    "home"        , :media => "all" %>
+  <%= javascript_include_tag "home"                          %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 
-<div id="headerDiv">
-  <table id="headerTable">
-    <tr>
-      <td colspan="2"><pre id="asciiBannerPre"><%= ASCII_ART_BANNERS[0] %></pre>
-      </td>
-    </tr>
-    <tr>
-      <td><pre id="asciiBannerPre">          </pre></td>
-      <td><span id="siteDescSpan">
-            <%=raw '<b    id="promptLoginB">clide@guide</b>'         +
-                   '<span id="promptPathSpan" >:~/cloud/ide/</span>' +
-                   '$ watch<span id="promptCursorSpan">_</span>'     %></span>
-      </td>
-    </tr>
-  </table>
-</div>
+<div id="headerDiv" ><%= yield :header %></div>
 
-<div id="contentDiv">
+<div id="contentDiv"><%= yield         %></div>
 
-  <table id="contentTable">
-    <tr>
-      <td id="navTd">    <iframe src="nav.html"                      ></iframe></td>
-      <td id="contentTd"><iframe src="welcome.html" id="contentFrame"></iframe></td>
-    </tr>
-  </table>
-
-</div>
 
 </body>
 </html>

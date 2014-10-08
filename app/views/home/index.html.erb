@@ -1,0 +1,35 @@
+
+<% content_for :header do %>
+
+<table id="headerTable">
+
+  <tr>
+    <td id="bannerTd">
+      <pre id="asciiBannerPre"><%= ASCII_ART_BANNERS[0] %></pre>
+      <span id="siteDescSpan">
+          <%=raw '<b           id="promptLoginB"    >clide@guide</b>'      +
+                 '<span        id="promptPathSpan"  >:~/cloud/ide/</span>' +
+                 '$ watch<span id="promptCursorSpan">_</span>'             %></span>
+    </td>
+    <td id="headerRTd">
+      <span id="headerSpan">
+        <%= link_to "Rate the clIDEs you've tried" , 'ratings' %></span></td>
+  </tr>
+</table>
+
+<% end %>
+
+
+<table id="contentTable">
+  <tr>
+    <td id="navTd">
+      <table id="navTable">
+        <tr><td onClick="parent.contentFrame.location = 'clides'"   >Stats</td   ></tr>
+        <tr><td onClick="parent.contentFrame.location = 'ratings'"  >Ratingss</td></tr>
+        <tr><td onClick="parent.contentFrame.location = 'reviews'"  >Reviewss</td></tr>
+        <tr><td onClick="parent.contentFrame.location = 'faqs.html'">FAQs</td    ></tr>
+      </table>
+    </td>
+    <td id="contentTd"><iframe id="contentFrame" src="welcome.html"></iframe></td>
+  </tr>
+</table>

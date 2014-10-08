@@ -28,20 +28,20 @@
   @clides.each do |clide|
 %>
     <tr>
-      <td><%= link_to     clide.name ,      clide.url , :target => '_blank' %></td>
-      <td><%= parse_range clide.memory_lo , clide.memory_hi                 %></td>
-      <td><%= parse_range clide.space_lo ,  clide.space_hi                  %></td>
-      <td><%= yes_or_no   clide.private                                     %></td>
-      <td><%= yes_or_no   clide.colaboration                                %></td>
-      <td><%= yes_or_no   clide.community                                   %></td>
-      <td><%= yes_or_no   clide.sudo                                        %></td>
-      <td><%= yes_or_no   clide.ssh                                         %></td>
-      <td><%= yes_or_no   clide.ssl                                         %></td>
-      <td><%= yes_or_no   clide.hosted                                      %></td>
+      <td><%= link_to     clide.name ,      clide.url , :target => '_blank'    %></td>
+      <td><%= parse_range clide.memory_lo , clide.memory_hi                    %></td>
+      <td><%= parse_range clide.space_lo ,  clide.space_hi                     %></td>
+      <td><%= yes_or_no   clide.private                                        %></td>
+      <td><%= yes_or_no   clide.colaboration                                   %></td>
+      <td><%= yes_or_no   clide.community                                      %></td>
+      <td><%= yes_or_no   clide.sudo                                           %></td>
+      <td><%= yes_or_no   clide.ssh                                            %></td>
+      <td><%= yes_or_no   clide.ssl                                            %></td>
+      <td><%= yes_or_no   clide.hosted                                         %></td>
   <% unless clide.source.blank? %>
-      <td><%= link_to     clide.floss ,     clide.source                    %></td>
+      <td><%= link_to     clide.floss ,     clide.source , :target => '_blank' %></td>
   <% else %>
-      <td><%= clide.source                                                  %></td>
+      <td><%= clide.source                                                     %></td>
   <% end %>
   <% if @is_admin %>
       <td><%= link_to 'Show' , clide %></td>
